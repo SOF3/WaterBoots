@@ -11,6 +11,8 @@ use pocketmine\command as c;
 use pocketmine\plugin\PluginBase as PB;
 
 class PluginBase extends Listener{
+	
+	private $wb = [];
     
     public function onEnable() {
     $this->getServer()->getPluginManager()->registerEvents($this, $this);
