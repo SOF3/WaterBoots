@@ -14,7 +14,8 @@ class PluginBase extends Listener{
     
     public function onEnable() {
     $this->getServer()->getPluginManager()->registerEvents($this, $this);
-         $this->getLogger()->info(TextFormat::GREEN . "Created by Cat -Discord- ");
+         $this->getLogger()->info(TextFormat::ORANGE . "Created by Cat -Discord- ");
+	    $this->getLogger()->info(TextFormat::GREEN . "WaterBoots and commands have been successfully enabled!");
 	    
     }
         
@@ -22,8 +23,8 @@ class PluginBase extends Listener{
         if(strtolower($command->getName()) == "wb" {
         if($sender->hasPermission("boots.water")) {
             public function onSneak(PlayerToggleSneakEvent $event); {
-                $command = "setblock ~ ~ ~ water";
-		$this->getServer()->dispatchCommand(new CommandSender(), $command);
+                $commandS = "setblock ~ ~ ~ water";
+		$this->getServer()->dispatchCommand(new CommandSender(), $commandS);
                 
                     } else {
                         $sender->sendMessage(TF::RED . "Incorrect usage or privlages!");
