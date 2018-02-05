@@ -32,9 +32,5 @@ class PluginBase extends Listener{
 		  isset($this->hasWb[$sender->getName()]) {
                 $commandS = "setblock ~ ~ ~ water";
 		$this->getServer()->dispatchCommand(new CommandSender(), $commandS);
-                
-                    } else {
-                        $sender->sendMessage(TF::RED . "Incorrect usage or privlages!");
-                        return false;
     }
 }
