@@ -22,7 +22,7 @@ class PluginBase extends Listener{
   public function onCommand(CommandSender $sender, Command $command) {
         if(strtolower($command->getName()) == "wb") {
         if($sender->hasPermission("boots.water")) {
-            public function onSneak(PlayerToggleSneakEvent $event); {
+            private function onSneak(PlayerToggleSneakEvent $event); {
                 $commandS = "setblock ~ ~ ~ water";
 		$this->getServer()->dispatchCommand(new CommandSender(), $commandS);
                 
