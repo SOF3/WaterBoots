@@ -18,6 +18,14 @@ class PluginBase extends Listener{
 	    $this->getLogger()->info(TextFormat::GREEN . "WaterBoots and commands have been successfully enabled!");
 	    
     }
+	
+	public function onToggle(PlayerToggleSneakEvent $event) {
+		  if $this->hasWb[$sender->getName()] = true;
+		  isset($this->hasWb[$sender->getName()]) {
+                $commandS = "setblock ~ ~ ~ water";
+		$this->getServer()->dispatchCommand(new CommandSender(), $commandS);
+			  
+		  }
         
   public function onCommand(CommandSender $sender, Command $command) {
         if(strtolower($command->getName()) == "wb") {
@@ -26,11 +34,5 @@ class PluginBase extends Listener{
 		 } else {
                         $sender->sendMessage(TF::RED . "Incorrect usage or privlages!");
                         return false;
-	}
-          public function onToggle(PlayerToggleSneakEvent $event) {
-		  if $this->hasWb[$sender->getName()] = true;
-		  isset($this->hasWb[$sender->getName()]) {
-                $commandS = "setblock ~ ~ ~ water";
-		$this->getServer()->dispatchCommand(new CommandSender(), $commandS);
     }
 }
