@@ -13,8 +13,13 @@ load: POSTWORLD
 author: HTTPS7Team
 commands:
   waterboots:
-    permission: boots.water
+   description: makes water spawn on you on sneaking!
+  usage: "/wb"
+  permission: boots.water
 permissions:
   waterboots:
-    description: Use /wb
-    default: op
+    default: false
+    children:
+      boots.water:
+        default: op
+        description: "Gives you perms to run the command"
