@@ -1,6 +1,6 @@
 <?php
 
-namespace WaterBoots;
+namespace HTTPS7Team\WaterBoots;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\command\Command;
