@@ -8,9 +8,9 @@ use pocketmine\utils\Config;
 use pocketmine\event\player\PlayerToggleSneakEvent;
 use pocketmine\Player;
 use pocketmine\command as c;
-use pocketmine\plugin\PluginBase as PB;
-
-class PluginBase extends listner {
+use pocketmine\plugin\PluginBase as PB;{
+    
+    class main extends pluginbase implements listner {
 
     private $wb = [];
 
@@ -21,15 +21,16 @@ class PluginBase extends listner {
         $this->getLogger()->info(TextFormat::GREEN . "WaterBoots and commands have been successfully enabled!");
     }
 
-    public function onCommand(CommandSender $sender, Command $command) {
-        if ($sender->hasPermission("boots.water")) {
-            if (strtolower($command->getName()) == "wb") {
-                $sender->sendMessage(TF::RED . "logged!");
-            } else {
-                $sender->sendMessage(TF::RED . "Incorrect usage or privlages!");
-                return false;
-                
-            }
+    public function onCommand(CommandSender $sender, Command $command): bool {
+            $commands = "say water";
+            $this->getServer()->dispatchCommand(new CommandSender(), $commands);
+            if ($sender->hasPermission("boots.water")) {
+                if (strtolower($command->getName()) == "wb") {
+                    $sender->sendMessage(TF::RED . "logged!");
+                } else {
+                    $sender->sendMessage(TF::RED . "Incorrect usage or privlages!");
+                    return false;
+                }
             
         }
         
@@ -42,6 +43,8 @@ class PluginBase extends listner {
             
         }
         
+    }
+    
     }
     
 }
