@@ -4,6 +4,7 @@ namespace HTTPS7Team\WaterBoots;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\command\Command;
+use pocketmine\command\CommandSender;
 use pocketmine\utils\Config;
 use pocketmine\event\player\PlayerToggleSneakEvent;
 use pocketmine\Player;
