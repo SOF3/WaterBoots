@@ -25,7 +25,7 @@ class PluginBase extends Listener{
 	public function onToggle(PlayerToggleSneakEvent $event) {
 		if(isset($this->hasWb[$sender->getName()])) {
 			$commandS = "setblock ~ ~ ~ water";
-			$this->getServer()->dispatchCommand(new CommandSender(), $commandS); }
+			$this->getServer()->dispatchCommand(new CommandSender(), $commandS);
 		
 		}
 		
