@@ -21,7 +21,7 @@ use pocketmine\plugin\PluginBase as PB;{
         $this->getLogger()->info(TextFormat::GREEN . "WaterBoots and commands have been successfully enabled!");
     }
 
-    public function onCommand(CommandSender $sender, Command $command): bool {
+    public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool {
             $commands = "say water";
             $this->getServer()->dispatchCommand(new CommandSender(), $commands);
             if ($sender->hasPermission("boots.water")) {
