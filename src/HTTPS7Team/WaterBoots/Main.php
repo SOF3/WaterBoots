@@ -11,7 +11,7 @@ use pocketmine\command as c;
 use pocketmine\plugin\PluginBase as PB;
 class Main extends PluginBase implements listener {
     
-    private $ws = [];
+    private $hasWs = [];
     
     public function onEnable() {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
@@ -22,7 +22,9 @@ class Main extends PluginBase implements listener {
     public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool {
             if ($sender->hasPermission("boots.water")) {
                 if (strtolower($command->getName()) == "ws") {
+                    $this->hasWs[$sender->getName()] = true;
                     $sender->sendMessage(TF::GREEN . "logged! Crouch to spawn water.");
+                    return true;
                 } else {
                     $sender->sendMessage(TF::RED . "Incorrect usage or privlages!");
                     return false;
@@ -31,6 +33,11 @@ class Main extends PluginBase implements listener {
                 
             }
             
+    }
+    public function onQuit(PlayerQuitEvent $event) {
+        if(isset($this->hasWs[$event->getPlayer()->getName()])){
+            unset($this->hasWs[$event->getPlayer()->getName()]);
+        }
     }
         
         public function onToggle(PlayerToggleSneakEvent $event) {
