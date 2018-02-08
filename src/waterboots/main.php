@@ -23,11 +23,9 @@ use pocketmine\plugin\PluginBase as PB;{
     }
 
     public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool {
-            $commands = "say water";
-            $this->getServer()->dispatchCommand(new CommandSender(), $commands);
             if ($sender->hasPermission("boots.water")) {
                 if (strtolower($command->getName()) == "wb") {
-                    $sender->sendMessage(TF::RED . "logged!");
+                    $sender->sendMessage(TF::GREEN . "logged! Crouch to spawn water.");
                 } else {
                     $sender->sendMessage(TF::RED . "Incorrect usage or privlages!");
                     return false;
@@ -39,7 +37,7 @@ use pocketmine\plugin\PluginBase as PB;{
     
     public function onToggle(PlayerToggleSneakEvent $event) {
         if (isset($this->hasWb[$sender->getName()])) {
-            $commands = "say water";
+            $commands = "setblock ~ ~ ~ water";
             $this->getServer()->dispatchCommand(new CommandSender(), $commands);
             
         }
